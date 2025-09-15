@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# Task Manager · Expo + React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Simple task manager. Local persistence. Light and dark theme. Expo Router. TypeScript.
 
-## Get started
+## Overview
 
-1. Install dependencies
+- Add tasks
+- Edit tasks
+- Toggle complete
+- Delete tasks
+- Persistent storage with AsyncStorage
+- Theme follows system with manual toggle
 
-   ```bash
-   npm install
-   ```
+Special instructions
 
-2. Start the app
+- Tap the checkbox area to toggle a task
+- Tap the pencil icon to edit
+- Tap the trash icon to delete
+- Tap the sun or moon icon to switch theme
+- Title 2–60 characters
+- Description empty or 2–160 characters
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Setup
 
 ```bash
-npm run reset-project
+npm install
+npx expo install @react-native-async-storage/async-storage
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Run
 
-## Learn more
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Open on a device or simulator. Use a development build, Android emulator, iOS simulator, or Expo Go.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## How data is saved
 
-## Join the community
+- State serializes to JSON
+- Saved under @tasks/v1
+- Loaded on app launch and dispatched as HYDRATE
+- Theme choice saved under @theme/v1
+- Save uses a small debounce to reduce writes
+- Reset during development
+- Change the storage key suffix or clear app storage on the device
 
-Join our community of developers creating universal apps.
+Reset during development
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Change the storage key suffix or clear app storage on the device
+
+## Third-party libraries and purpose
+
+- @react-native-async-storage/async-storage: Persistent storage
+- expo:run the app and access native APIs
+- expo-router: Navigation
+- react-native-safe-area-context: Safe area insets
+- expo-status-bar: Status bar
+- @expo/vector-icons: Icons
