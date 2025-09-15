@@ -45,14 +45,10 @@ Open on a device or simulator. Use a development build, Android emulator, iOS si
 - Reset during development
 - Change the storage key suffix or clear app storage on the device
 
-Reset during development
-
-- Change the storage key suffix or clear app storage on the device
-
 ## Third-party libraries and purpose
 
 - @react-native-async-storage/async-storage: Persistent storage
-- expo:run the app and access native APIs
+- expo: Run the app and access native APIs
 - expo-router: Navigation
 - react-native-safe-area-context: Safe area insets
 - expo-status-bar: Status bar
